@@ -8,7 +8,7 @@ let userInfo = document.getElementById('userInfo')
 let userList = document.getElementById('userList')
 const getUsers = () => {
     let httpPost = new XMLHttpRequest()
-        httpPost.open('GET', 'https://projectmanagerone.herokuapp.com/user/', true)
+        httpPost.open('GET', 'https://projectmanagerone.herokuapp.com/users/', true)
         httpPost.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         httpPost.onreadystatechange = () => {
             if (httpPost.readyState == 4 && httpPost.status == 200) {
@@ -168,7 +168,7 @@ const sendBlockerTask = (evt) => {
     }
     else {
         let httpPost = new XMLHttpRequest()
-        httpPost.open('POST', 'https://projectmanagerone.herokuapp.com/tasks', true)
+        httpPost.open('POST', 'https://projectmanagerone.herokuapp.com/tasks/', true)
         httpPost.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         httpPost.onreadystatechange = () => {
             if (httpPost.readyState == 4 && httpPost.status == 201) {
@@ -189,7 +189,7 @@ subTask.addEventListener('click', sendBlockerTask, false)
 // buttonPart
 const getTasks = () => {
     let httpPost = new XMLHttpRequest()
-        httpPost.open('GET', 'https://projectmanagerone.herokuapp.com/task/', true)
+        httpPost.open('GET', 'https://projectmanagerone.herokuapp.com/tasks/', true)
         httpPost.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         httpPost.onreadystatechange = () => {
             if (httpPost.readyState == 4 && httpPost.status == 200) {
