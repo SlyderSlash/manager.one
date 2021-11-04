@@ -16,7 +16,7 @@ const getUsers = () => {
                 let users = JSON.parse(response)
                 users.users.forEach((user) => {
                     userList.innerHTML += `<li>
-                    <h2>${user.name}</h2>
+                    <h2>${user.id} - ${user.name}</h2>
                     <p>${user.email}</p>
                     <button id='${user.id}-DelUserButton' class='deleteUser'>Supprimer</button>
                     </li>`
@@ -197,10 +197,10 @@ const getTasks = () => {
                 let tasks = JSON.parse(response)
                 tasks.tasks.forEach((task) => {
                     taskList.innerHTML += `<li>
-                    <h2>${task.title}</h2>
+                    <h2>${task.id} - ${task.title}</h2>
                     <p>${task.description}</p>
-                    <h3>${task.status}</h3>
-                    <button id='${task.id}-DelTaskButton-${task.user_id}' class='deleteTask'>Supprimer</button>
+                    <h3>${task.status} à faire par : ${task.user_id}</h3>
+                    <button id='${task.id}-DelTaskButton' class='deleteTask'>Supprimer</button>
                     </li>`
                 })
                 let taskBtn = document.querySelectorAll('.deleteTask')  
