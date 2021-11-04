@@ -59,7 +59,7 @@ const sendBlockerUser= (evt) => {
     }
     else {
         let httpPost = new XMLHttpRequest()
-        httpPost.open('POST', 'https://projectmanagerone.herokuapp.com/users', true)
+        httpPost.open('POST', 'https://projectmanagerone.herokuapp.com/users/', true)
         httpPost.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         httpPost.onreadystatechange = () => {
             if (httpPost.readyState == 4 && httpPost.status == 201) {
