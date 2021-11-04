@@ -1,9 +1,9 @@
 <?php
         class Database{
-            private $host = "localhost:8889";
-            private $db_name = "manageronetest";
-            private $username = "root";
-            private $password = "root";
+            private $host = "n2o93bb1bwmn0zle.chr7pe7iynqr.eu-west-1.rds.amazonaws.com";
+            private $db_name = "l4xnb26w67g3gdv6";
+            private $username = "yxkoza672htgnu04";
+            private $password = "wb3e0nmud6xg8y5e";
             public $connexion;
         
             public function getConnection(){

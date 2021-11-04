@@ -19,14 +19,8 @@
 		case 'GET':
             $id = $_GET['uid'];
 			if(empty($id)){
-				if($_SERVER['SERVER_NAME'] === "localhost"){
                     get();
                     break;
-                }
-                else {
-                    header("HTTP/1.0 404 Not Found");
-                    break;
-                }
 			}
 			else {
 				$id=intval($id);
@@ -43,8 +37,6 @@
 			break;
 			
 		case 'DELETE':
-            if ($_SERVER['SERVER_NAME'] === "localhost")
-            {
                 $id = $_GET['uid'];
 			    $id = intval($id);
                 if (!empty($id)){
@@ -59,16 +51,6 @@
                     header('Content-Type: application/json');
                     echo json_encode($response);
                 }
-            }
-            else {
-                $response=array(
-                    'status' => 0,
-                    'error_type' => 'ACCESS ERROR',
-                    'status_message' =>'ERREUR! : Vous n\'êtes pas autorisé à accéder à cette fonction'
-                );
-                header('Content-Type: application/json');
-                echo json_encode($response);
-            }
             break;
     }
 ?>
