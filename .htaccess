@@ -1,6 +1,6 @@
 RewriteEngine On
 RewriteRule ^usertasks+/(\d+)$ usertasks.php?userid=$1
-RewriteRule ^tasks/?$ tasks.php?id=
+RewriteRule ^tasks+/(\d+)$ tasks.php?id=
 RewriteRule ^task+/(\d+)$ tasks.php?id=$1 
 RewriteRule ^user+/(\d+)$ users.php?uid=$1
-RewriteRule ^users/?$ users.php?uid= [END]
+RewriteRule ^users+/(\d+)$ users.php?uid= [END]
