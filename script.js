@@ -8,7 +8,7 @@ let userInfo = document.getElementById('userInfo')
 let userList = document.getElementById('userList')
 const getUsers = () => {
     let httpPost = new XMLHttpRequest()
-        httpPost.open('GET', 'https://projectmanagerone.herokuapp.com/users', true)
+        httpPost.open('GET', 'https://projectmanagerone.herokuapp.com/user/', true)
         httpPost.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         httpPost.onreadystatechange = () => {
             if (httpPost.readyState == 4 && httpPost.status == 200) {
@@ -94,7 +94,6 @@ const sendBlockerIDUser= (evt,id) => {
     else {
         evt.preventDefault();
     }
-    console.log(`userID.value = ${userID.value}`)
     if(userID.value==''){
         alert('L\'ID utilisateur est obligatoire')
         return
@@ -190,7 +189,7 @@ subTask.addEventListener('click', sendBlockerTask, false)
 // buttonPart
 const getTasks = () => {
     let httpPost = new XMLHttpRequest()
-        httpPost.open('GET', 'https://projectmanagerone.herokuapp.com/tasks', true)
+        httpPost.open('GET', 'https://projectmanagerone.herokuapp.com/task/', true)
         httpPost.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         httpPost.onreadystatechange = () => {
             if (httpPost.readyState == 4 && httpPost.status == 200) {
